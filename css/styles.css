@@ -11433,3 +11433,8 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+div.contact {
+  display: inline-block !important; 
+  text-align: center !important; 
+  margin:auto !important; 
+}
