@@ -29,3 +29,42 @@ window.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => observer.observe(section));
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
+  const status = form.querySelector(".form-status");
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  const setStatus = (text, type) => {
+    status.textContent = text;
+    status.classList.remove("is-success", "is-error");
+    status.classList.add(type);
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (submitButton) submitButton.disabled = true;
+
+    fetch("https://formspree.io/f/mljjvqbj?hide_success=true", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Formspree responded with ${response.status}`);
+        form.reset();
+        setStatus("Thanks for your message — it has been sent.", "is-success");
+      })
+      .catch(() => {
+        setStatus(
+          "Sorry, something went wrong sending your message. Please email michaeldonohoe58@gmail.com directly.",
+          "is-error"
+        );
+      })
+      .finally(() => {
+        if (submitButton) submitButton.disabled = false;
+      });
+  });
+});
