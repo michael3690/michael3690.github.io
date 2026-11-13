@@ -5,13 +5,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="The curriculum vitae of Michael Donohoe, software developer." />
         <meta name="author" content="Michael Donohoe" />
+        <meta name="accept-language" content="en-IE" />
+        <meta name="theme-color" content="#142139" />
         <title>Michael Donohoe - Curriculum Vitae</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <link rel="preconnect" href="https://use.fontawesome.com" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+        <!-- Canonical & social sharing -->
+        <link rel="canonical" href="https://michaeldonohoe.ie/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://michaeldonohoe.ie/" />
+        <meta property="og:title" content="Michael Donohoe - Curriculum Vitae" />
+        <meta property="og:description" content="The curriculum vitae of Michael Donohoe, software developer." />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <!-- Structured data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Michael Donohoe",
+                "url": "https://michaeldonohoe.ie/",
+                "jobTitle": "Software Developer",
+                "email": "michaeldonohoe58@gmail.com",
+                "worksFor": { "@type": "Organization", "name": "SAP" },
+                "alumniOf": { "@type": "CollegeOrUniversity", "name": "Dublin City University" },
+                "sameAs": [
+                    "https://www.linkedin.com/in/michaeldonohoe1/",
+                    "https://github.com/michael3690/"
+                ]
+            }
+        </script>
+
         <link href="css/site.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+        <a class="skip-link" href="#main">Skip to content</a>
         <!-- Navigation-->
         <nav class="site-nav" id="sideNav" aria-label="Main navigation">
             <a class="navbar-brand" href="#page-top">
@@ -28,7 +56,7 @@
             </ul>
         </nav>
         <!-- Page Content-->
-        <div class="container-fluid p-0">
+        <main id="main" class="container-fluid">
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
@@ -41,8 +69,12 @@
                     </div>
                     <p class="lead mb-5">I am experienced in working as a software developer on challenging projects as part of an agile team</p>
                     <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/michaeldonohoe1/" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                        <a class="social-icon" href="https://github.com/michael3690/" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a class="social-icon" href="https://www.linkedin.com/in/michaeldonohoe1/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" /></svg>
+                        </a>
+                        <a class="social-icon" href="https://github.com/michael3690/" aria-label="GitHub" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" /></svg>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -87,17 +119,13 @@
                             <h3 class="mb-0">Associate Developer (Internship), SAP Analytics Cloud Business Intelligence</h3>
                             <div class="subheading mb-3">SAP</div>
                             <ul>
-                                <li>Experience using JavaScript, Java, and TypeScript in an agile development process</li>
-                                <li>Taking end-to-end ownership of features from design and development through to deployment</li>
-                                <li>Designing solutions to complex problems and requirements in collaboration with others in a cross-functional team</li>
-                                <li>Participating in code reviews, sharing experience and best-practice knowledge with colleagues</li>
-                                <li>Use of Git, GitHub, and Gerrit</li>
-                                <li>Production debugging, root cause analysis, and bug fixing</li>
-                                <li>Working as part of a highly motivated Agile team towards achieving common goals</li>
-                                <li>Took on a project developing a feature that will be released with the general availability of the DataAnalyzer 2.0 product used by several Fortune 500 companies</li>
-                                <li>Presented to senior product management demonstrating the functionality of the feature I was working on</li>
-                                <li>Feature was reviewed by a Senior Project Consultant for development in SAP and feedback received and reviewed by a Development Senior Executive</li>
-                                <li>Cypress end-to-end testing framework</li>
+                                <li>Working with JavaScript, Java, and TypeScript in an agile development process</li>
+                                <li>Taking end-to-end ownership of features from design through to deployment</li>
+                                <li>Designing solutions to complex problems in collaboration with cross-functional teams</li>
+                                <li>Contributing to code reviews and sharing best-practice knowledge with colleagues</li>
+                                <li>Managing version control with Git, GitHub, and Gerrit; using Cypress for end-to-end testing</li>
+                                <li>Developing a feature shipped with the general availability release of DataAnalyzer 2.0, used by several Fortune 500 companies</li>
+                                <li>Presenting the feature to senior product management, with the work reviewed by SAP's project and development leadership</li>
                             </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">May 2021 - September 2021 & January 2022 - September 2022</span></div>
@@ -122,13 +150,7 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Newbridge College</h3>
                             <div class="subheading mb-3">Leaving Certificate</div>
-                            <p>Maths - Higher Level</p>
-                            <p>Irish - Higher Level</p>
-                            <p>English - Higher Level</p>
-                            <p>Business - Higher Level</p>
-                            <p>French - Higher Level</p>
-                            <p>Biology - Higher Level</p>
-                            <p>Chemistry - Higher Level</p>
+                            <p>Higher Level in seven subjects, including Mathematics and Business</p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">2013 - 2019</span></div>
                     </div>
@@ -178,39 +200,30 @@
                     <p class="mb-0">I spend the remainder of my free time watching movies and television shows and exploring the latest technology advancements</p>
                 </div>
             </section>
-            <!-- Interests-->
+            <!-- Contact-->
             <section class="resume-section" id="contact-me">
                 <div class="resume-section-content contact">
                     <h2 class="mb-5">Contact Me</h2>
-                    <form action="https://formspree.io/f/mljjvqbj"
-                    method="POST">
-                        <select id="title" name="title" required>
-                        <option disabled selected value> -- select title -- </option>
-                        <option value="Mr">Mr</option>
-                        <option value="Mrs">Mrs</option>
-                        <option value="Ms">Ms</option>
-                        <option value="Sir">Sir</option>
-                        <option value="Lady">Lady</option>
-                        <option value="Lord">Lord</option>
-                        <option value="Cllr">Cllr</option>
-                        <option value="Dr">Dr</option>
-                        <option value="Other">Other</option>
+                    <form id="contact-form" action="https://formspree.io/f/mljjvqbj" method="POST">
+                        <input type="hidden" name="_subject" value="New message from CV website" />
+                        <select id="title" name="title" aria-label="Title" required>
+                            <option value="" disabled selected>Select a title</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Other">Other</option>
                         </select>
-                        <br><br>
-                        <input type="text" placeholder="Enter your first name" id="firstName" name="firstName" required />
-                        <br><br>
-                        <input type="text" placeholder="Enter your last name" id="lastName" name="lastName" required/>
-                        <br><br>
-                        <input type="email" placeholder="Enter your email" id="email" name="email" required/>
-                        <br><br>
-                        <br>
-                        <textarea id="message" placeholder="Enter your Message" rows="4" name="message" required></textarea>
-                        <br><br>
+                        <input type="text" id="firstName" name="firstName" aria-label="First name" placeholder="Enter your first name" autocomplete="given-name" required />
+                        <input type="text" id="lastName" name="lastName" aria-label="Last name" placeholder="Enter your last name" autocomplete="family-name" required />
+                        <input type="email" id="email" name="email" aria-label="Email address" placeholder="Enter your email" autocomplete="email" required />
+                        <textarea id="message" name="message" rows="4" aria-label="Message" placeholder="Enter your message" required></textarea>
                         <button type="submit">Send Message</button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </section>
-        </div>
+        </main>
         <script src="js/scripts.js" defer></script>
     </body>
 </html>

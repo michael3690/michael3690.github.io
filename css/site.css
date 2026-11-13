@@ -47,6 +47,25 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
+/* Skip link — visually hidden until keyboard-focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 100;
+  padding: 0.7rem 1.25rem;
+  border-radius: 0.65rem 0.65rem 0.65rem 0;
+  background: var(--accent-dark);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
 .site-nav {
   position: sticky;
   z-index: 10;
@@ -246,6 +265,12 @@ h5 {
   color: #fff;
 }
 
+.social-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+}
+
 .d-flex {
   display: flex;
 }
@@ -345,31 +370,11 @@ th:last-child {
   font-weight: 600;
 }
 
-.fa-ul {
-  padding-left: 1.7rem;
-  list-style: none;
-}
-
-.fa-ul li {
-  position: relative;
-  margin: 0.45rem 0;
-}
-
-.fa-li {
-  position: absolute;
-  left: -1.6rem;
-  color: var(--accent);
-}
-
 .contact form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
   max-width: 680px;
-}
-
-.contact form br {
-  display: none;
 }
 
 .contact input,
@@ -406,6 +411,21 @@ th:last-child {
 .contact button:hover {
   transform: translateY(-1px);
   background: var(--accent-dark);
+}
+
+.form-status {
+  grid-column: 1 / -1;
+  min-height: 1.45rem;
+  margin: 0;
+  font-weight: 650;
+}
+
+.form-status.is-success {
+  color: #2e7d32;
+}
+
+.form-status.is-error {
+  color: #b3261e;
 }
 
 @media (max-width: 760px) {
