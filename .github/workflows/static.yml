@@ -38,7 +38,7 @@ jobs:
         # expose .git/, workflow files and repo config on the live site.
         run: |
           mkdir -p _site/css _site/js _site/assets/img
-          cp index.html CNAME .nojekyll _site/
+          cp index.html CNAME .nojekyll robots.txt sitemap.xml _site/
           cp css/* _site/css/
           cp js/* _site/js/
           cp assets/img/* _site/assets/img/

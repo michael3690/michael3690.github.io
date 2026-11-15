@@ -1,0 +1,5 @@
+# The whole site is a public curriculum vitae: everything is open to crawlers.
+User-agent: *
+Allow: /
+
+Sitemap: https://michaeldonohoe.ie/sitemap.xml
