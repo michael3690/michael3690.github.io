@@ -33,11 +33,21 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Assemble site files
+        # Publish only real site content. Never the whole repository: that would
+        # expose .git/, workflow files and repo config on the live site.
+        run: |
+          mkdir -p _site/css _site/js _site/assets/img
+          cp index.html CNAME .nojekyll _site/
+          cp css/* _site/css/
+          cp js/* _site/js/
+          cp assets/img/* _site/assets/img/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload the assembled site directory only
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

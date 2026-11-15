@@ -5,10 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="The curriculum vitae of Michael Donohoe, software developer." />
         <meta name="author" content="Michael Donohoe" />
-        <meta name="accept-language" content="en-IE" />
         <meta name="theme-color" content="#142139" />
         <title>Michael Donohoe - Curriculum Vitae</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
         <!-- Canonical & social sharing -->
         <link rel="canonical" href="https://michaeldonohoe.ie/" />
@@ -16,7 +15,9 @@
         <meta property="og:url" content="https://michaeldonohoe.ie/" />
         <meta property="og:title" content="Michael Donohoe - Curriculum Vitae" />
         <meta property="og:description" content="The curriculum vitae of Michael Donohoe, software developer." />
+        <meta property="og:image" content="https://michaeldonohoe.ie/assets/img/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://michaeldonohoe.ie/assets/img/og-image.png" />
 
         <!-- Structured data -->
         <script type="application/ld+json">
@@ -43,7 +44,7 @@
         <!-- Navigation-->
         <nav class="site-nav" id="sideNav" aria-label="Main navigation">
             <a class="navbar-brand" href="#page-top">
-                <img class="img-profile" src="assets/img/profile.jpg" alt="Michael Donohoe" />
+                <img class="img-profile" src="assets/img/profile.jpg" alt="" width="176" height="176" />
                 <span>Michael Donohoe</span>
             </a>
             <ul class="navbar-nav">
@@ -206,20 +207,45 @@
                     <h2 class="mb-5">Contact Me</h2>
                     <form id="contact-form" action="https://formspree.io/f/mljjvqbj" method="POST">
                         <input type="hidden" name="_subject" value="New message from CV website" />
-                        <select id="title" name="title" aria-label="Title" required>
-                            <option value="" disabled selected>Select a title</option>
-                            <option value="Mr">Mr</option>
-                            <option value="Mrs">Mrs</option>
-                            <option value="Ms">Ms</option>
-                            <option value="Dr">Dr</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <input type="text" id="firstName" name="firstName" aria-label="First name" placeholder="Enter your first name" autocomplete="given-name" required />
-                        <input type="text" id="lastName" name="lastName" aria-label="Last name" placeholder="Enter your last name" autocomplete="family-name" required />
-                        <input type="email" id="email" name="email" aria-label="Email address" placeholder="Enter your email" autocomplete="email" required />
-                        <textarea id="message" name="message" rows="4" aria-label="Message" placeholder="Enter your message" required></textarea>
+                        <!-- honeypot: hidden from view; a bot that fills it sends an empty value, which Formspree rejects -->
+                        <input type="hidden" id="hp-website" name="_website" value="" />
+
+                        <div class="field wide">
+                            <label for="title">Title</label>
+                            <select id="title" name="title">
+                                <option value="" selected>Prefer not to say</option>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Ms">Ms</option>
+                                <option value="Dr">Dr</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="firstName">First name</label>
+                            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
+                        </div>
+                        <div class="field">
+                            <label for="lastName">Last name</label>
+                            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required />
+                        </div>
+                        <div class="field wide">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required />
+                        </div>
+                        <div class="field wide">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+
                         <button type="submit">Send Message</button>
                         <p class="form-status" role="status" aria-live="polite"></p>
+                        <p class="form-fallback" hidden>
+                            Please email
+                            <a href="mailto:michaeldonohoe58@gmail.com">michaeldonohoe58@gmail.com</a>
+                            directly instead.
+                        </p>
                     </form>
                 </div>
             </section>

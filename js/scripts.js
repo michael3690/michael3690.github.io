@@ -38,16 +38,26 @@ window.addEventListener("DOMContentLoaded", () => {
   const submitButton = form.querySelector('button[type="submit"]');
 
   const setStatus = (text, type) => {
+    if (!status) return;
     status.textContent = text;
     status.classList.remove("is-success", "is-error");
     status.classList.add(type);
   };
 
+  // Fallback guidance lives in the markup, not duplicated here as a string:
+  // it stays clickable for sighted users and is announced to screen readers.
+  const fallback = form.querySelector(".form-fallback");
+  if (fallback) fallback.hidden = true;
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     if (submitButton) submitButton.disabled = true;
 
-    fetch("https://formspree.io/f/mljjvqbj?hide_success=true", {
+    // post to the endpoint declared in the markup,
+    const endpoint = new URL(form.action);
+    endpoint.searchParams.set("hide_success", "true");
+
+    fetch(endpoint.href, {
       method: "POST",
       body: new FormData(form),
       headers: { Accept: "application/json" },
@@ -58,10 +68,8 @@ window.addEventListener("DOMContentLoaded", () => {
         setStatus("Thanks for your message — it has been sent.", "is-success");
       })
       .catch(() => {
-        setStatus(
-          "Sorry, something went wrong sending your message. Please email michaeldonohoe58@gmail.com directly.",
-          "is-error"
-        );
+        setStatus("Sorry, your message could not be sent.", "is-error");
+        if (fallback) fallback.hidden = false;
       })
       .finally(() => {
         if (submitButton) submitButton.disabled = false;
