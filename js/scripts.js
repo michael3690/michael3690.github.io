@@ -53,11 +53,9 @@ window.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     if (submitButton) submitButton.disabled = true;
 
-    // post to the endpoint declared in the markup,
-    const endpoint = new URL(form.action);
-    endpoint.searchParams.set("hide_success", "true");
-
-    fetch(endpoint.href, {
+    // Post to the endpoint declared in the markup, so the form still works
+    // with JavaScript disabled.
+    fetch(form.action, {
       method: "POST",
       body: new FormData(form),
       headers: { Accept: "application/json" },
